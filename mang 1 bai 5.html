@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<script>
+    let number = [2,3,-5,-9,8,12,-4,-3];
+    let check;
+    for ( i = 0; i < number.length; i++ ) {
+        for (j = i + 1; j < number.length; j++) {
+            if (number[i] > number[j]) {
+                check = number[i];
+                number[i] = number[j];
+                number[j] = check;
+            }
+        }
+    }
+    for (i = 0; i < number.length; i++){
+        document.write(number[i] + "; ")
+    }
+</script>
+</body>
+</html>

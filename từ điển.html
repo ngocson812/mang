@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<input type="text" id="word">
+<button value="search" onclick="check()">Dịch</button>
+<p id="result"></p>
+<script>
+    function check() {
+        let word = document.getElementById("word").value;
+        let english = ["cat","dog","elephant","chicken","pig","mouse","monkey","horse","bird","shark","goat","lion","tiger","rồng"];
+        let vietnamese = ["mèo","chó","voi","gà","lợn","chuột","khỉ","ngựa","chim","cá mập","dê","sư tử","hổ","dragon"];
+        let flag = true;
+        for (i = 0; i < vietnamese.length; i++){
+            if (vietnamese[i] === word){
+                document.getElementById("result").innerHTML = english[i];
+                break;
+            }
+            if (english[i] === word){
+                flag = false
+                document.getElementById("result").innerHTML = vietnamese[i]
+                break;
+            }
+            }
+        if (flag === true ){
+            document.getElementById("result").innerHTML = "Từ này chưa đc nhập"
+        }
+        }
+</script>
+</body>
+</html>
